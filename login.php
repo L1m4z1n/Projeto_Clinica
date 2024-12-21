@@ -14,7 +14,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (password_verify($password, $user['password'])) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
-            header('Location: index.php'); // Redireciona para a página inicial
+            $_SESSION['role'] = $user['role'];
+
+            if ($user['role'] === 'Admin') {
+                header('Location: admin_dashboard.php');//Painel do ADM
+            }else {
+                header('Location: user_dashboard.php'); //Usuário comum
+            }
+            
             exit;
         } else {
             $error = "Credenciais inválidas!";
