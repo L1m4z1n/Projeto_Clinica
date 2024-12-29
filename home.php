@@ -1,3 +1,6 @@
+<?php
+include ('../../config/config.php');
+?>
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <div class="container mt-4">
     <!-- Header -->

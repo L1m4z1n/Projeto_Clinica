@@ -1,5 +1,5 @@
 <?php
-include('config.php');
+include('../../config/config.php');
 session_start();
 
 // Verifica se o usuário está logado e se é administrador
