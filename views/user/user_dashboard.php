@@ -3,13 +3,13 @@ session_start();
 
 // Verifica se o usuário está logado
 if (!isset($_SESSION['user_id'])) {
-    header('Location: login.php');
+    header('Location: ../auth/login.php'); // Caminho ajustado
     exit();
 }
 
 // Garante que apenas usuários comuns tenham acesso
 if ($_SESSION['role'] !== 'User') {
-    header('Location: login.php');
+    header('Location: ../auth/login.php'); // Caminho ajustado
     exit();
 }
 ?>
@@ -20,7 +20,7 @@ if ($_SESSION['role'] !== 'User') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Área do Usuário</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css"> <!-- Caminho ajustado -->
 </head>
 <body>
 <div class="container mt-5">
@@ -53,17 +53,17 @@ if ($_SESSION['role'] !== 'User') {
                 <div class="card-body">
                     <h5 class="card-title">Suporte</h5>
                     <p class="card-text">Entre em contato com nossa equipe de suporte.</p>
-                    <a href="suporte.php" class="btn btn-primary">Acessar</a>
+                    <a href="../suporte/suporte.php" class="btn btn-primary">Acessar</a> <!-- Caminho ajustado -->
                 </div>
             </div>
         </div>
     </div>
 
     <div class="text-center mt-5">
-        <a href="logout.php" class="btn btn-danger">Sair</a>
+        <a href="../../public/logout.php" class="btn btn-danger">Sair</a> <!-- Caminho ajustado -->
     </div>
 </div>
 
-<script src="js/bootstrap.bundle.min.js"></script>
+<script src="../../js/bootstrap.bundle.min.js"></script> <!-- Caminho ajustado -->
 </body>
 </html>

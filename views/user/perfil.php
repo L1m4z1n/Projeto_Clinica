@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['user_id'])) {
-    header('Location: login.php');
+    header('Location: ../auth/login.php'); // Caminho ajustado para o login
     exit();
 }
 
@@ -16,12 +16,12 @@ $email = "usuario@example.com"; // Substituir com dados reais do banco
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Perfil</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css"> <!-- Caminho ajustado -->
 </head>
 <body>
 <div class="container mt-5">
     <h2 class="text-center">Meu Perfil</h2>
-    <form method="POST" action="atualizar_perfil.php">
+    <form method="POST" action="atualizar_perfil.php"> <!-- Caminho ajustado -->
         <div class="mb-3">
             <label for="nome" class="form-label">Nome</label>
             <input type="text" class="form-control" id="nome" name="nome" value="<?php echo htmlspecialchars($nome); ?>" required>
@@ -33,6 +33,6 @@ $email = "usuario@example.com"; // Substituir com dados reais do banco
         <button type="submit" class="btn btn-primary w-100">Atualizar</button>
     </form>
 </div>
-<script src="js/bootstrap.bundle.min.js"></script>
+<script src="../../js/bootstrap.bundle.min.js"></script> <!-- Caminho ajustado -->
 </body>
 </html>

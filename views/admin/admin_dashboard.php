@@ -3,7 +3,7 @@ session_start();
 
 // Verifica se o usuário está logado e se é administrador
 if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'Admin') {
-    header('Location: login.php'); // Redireciona para o login se não for Admin
+    header('Location: ../auth/login.php'); // Redireciona para o login
     exit;
 }
 ?>
@@ -13,7 +13,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'Admin') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel do Administrador</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css"> <!-- Caminho ajustado -->
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -28,7 +28,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'Admin') {
                     <a class="nav-link" href="gerenciar-usuarios.php">Gerenciar Usuários</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="logout.php">Sair</a>
+                    <a class="nav-link" href="../../public/logout.php">Sair</a> <!-- Caminho ajustado -->
                 </li>
             </ul>
         </div>
@@ -78,6 +78,6 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'Admin') {
     <p class="mb-0">&copy; <?php echo date("Y"); ?> Admin Dashboard. Todos os direitos reservados.</p>
 </footer>
 
-<script src="js/bootstrap.bundle.min.js"></script>
+<script src="../../js/bootstrap.bundle.min.js"></script> <!-- Caminho ajustado -->
 </body>
 </html>

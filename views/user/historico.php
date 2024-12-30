@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['user_id'])) {
-    header('Location: login.php');
+    header('Location: ../auth/login.php'); // Caminho ajustado para o login
     exit();
 }
 
@@ -19,7 +19,7 @@ $historico = [
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Histórico</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css"> <!-- Caminho ajustado -->
 </head>
 <body>
 <div class="container mt-5">
@@ -30,6 +30,6 @@ $historico = [
         <?php endforeach; ?>
     </ul>
 </div>
-<script src="js/bootstrap.bundle.min.js"></script>
+<script src="../../js/bootstrap.bundle.min.js"></script> <!-- Caminho ajustado -->
 </body>
 </html>

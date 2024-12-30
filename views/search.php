@@ -1,4 +1,6 @@
 <?php
+include('../config/config.php'); // Inclui a configuração para o banco de dados
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $query = $_POST['query']; // Obtém o termo pesquisado
     $query = $conn->real_escape_string($query); // Previne SQL Injection
