@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('config.php');
+include_once __DIR__ . '/../../config/config.php'; // Caminho corrigido para incluir o config.php
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $conn->real_escape_string($_POST['username']);
@@ -17,11 +17,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['role'] = $user['role'];
 
             if ($user['role'] === 'Admin') {
-                header('Location: admin_dashboard.php');//Painel do ADM
-            }else {
-                header('Location: user_dashboard.php'); //Usuário comum
+                header('Location: ../../admin_dashboard.php'); // Painel do ADM
+            } else {
+                header('Location: ../../user_dashboard.php'); // Usuário comum
             }
-            
             exit;
         } else {
             $error = "Credenciais inválidas!";
@@ -31,14 +30,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css"> <!-- Caminho corrigido -->
 </head>
 <body>
 <div class="container mt-5">
@@ -58,9 +56,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <button type="submit" class="btn btn-primary w-100">Entrar</button>
     </form>
     <div class="text-center mt-3">
-        <a href="cadastrar-usuario.php" class="btn btn-link">Não tem uma conta? Cadastre-se</a>
+        <a href="cadastrar-usuario.php" class="btn btn-link">Não tem uma conta? Cadastre-se</a> <!-- Caminho corrigido -->
     </div>
 </div>
-<script src="js/bootstrap.bundle.min.js"></script>
+<script src="../../js/bootstrap.bundle.min.js"></script> <!-- Caminho corrigido -->
 </body>
 </html>

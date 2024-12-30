@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="../../css/bootstrap.min.css">
 
 <h1>Cadastrar Consulta</h1>
 <form action="?page=salvar-consulta" method="POST">
